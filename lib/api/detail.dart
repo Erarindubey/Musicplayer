@@ -93,7 +93,7 @@ class _DetailTrackState extends State<DetailTrack>{
                 }
                 if (snapshot.hasError){
                   return const Text(
-                    "Could not load lyrics, please check your internet connection.", 
+                    "NO INTERNET CONNECTION", 
                     style: TextStyle(color: Colors.red),
                   );
                 }

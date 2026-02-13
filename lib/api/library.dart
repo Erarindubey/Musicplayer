@@ -58,9 +58,13 @@ class _LibraryScreenState extends State<LibraryScreen>{
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        title: const Text("Music Library"),
+        title: const Text("Music Library", style: TextStyle(color: Colors.white, fontWeight: FontWeight.bold),),
         elevation: 0,
+        backgroundColor: Colors.deepPurple,
+        shadowColor: Colors.black,
+        scrolledUnderElevation: 5,
       ),
+      backgroundColor: Colors.purple[50],
       body: Column(
         children: [
           Padding(
@@ -83,6 +87,11 @@ class _LibraryScreenState extends State<LibraryScreen>{
                           icon: const Icon(Icons.clear)
                           )
                           : null,
+                iconColor: Colors.deepPurple,
+                prefixIconColor: Colors.deepPurple, 
+                suffixIconColor: Colors.deepPurple,
+                hoverColor: Colors.grey[70],
+                filled: true,
               ),
               onChanged: _onScreenChanged,
             ),
