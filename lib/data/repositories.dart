@@ -3,10 +3,10 @@ import 'package:http/http.dart' as http;
 import 'package:musicplayer/data/models.dart';
 
 class MusicRepository{
-  final List<String> _randomKeywords = ['love', 'blue', 'sky', 'heart', 'star', 'night', 'rain'];
-
   Future<List<Track>> fetchTracks({required String query, required int offset}) async {
     String searchTerm;
+    final List<String> _randomKeywords = ['love', 'blue', 'sky', 'heart', 'star', 'night', 'rain'];
+
 
     if (query.isEmpty){
       int index = (offset / 50 ).round();
@@ -19,11 +19,12 @@ class MusicRepository{
       final response = await http.get(url); 
       if (response.statusCode == 200){
         final data = json.decode(response.body);
-        return data['results'].map((t)=> Track.fromJson(t)).toList();
+        return data['results'].map((t)=> Track.fromJson(t)).toList().cast<Track>();
       }
       throw Exception("api error");
     }
     catch (e) {
+      print(e); 
       throw Exception("NO INTERNET CONNECTION");
     }
   }
