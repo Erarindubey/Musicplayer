@@ -51,7 +51,7 @@ class TrackState {
       hasreachedmax: hasreachedmax ?? this.hasreachedmax,
       currentQuery: currentQuery ?? this.currentQuery,
       pageIndex: pageIndex ?? this.pageIndex,
-      errorMessage: errorMessage ?? this.currentQuery
+      errorMessage: errorMessage ?? this.errorMessage
     );
   }
 }//states

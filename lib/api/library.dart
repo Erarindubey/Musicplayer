@@ -3,8 +3,7 @@ import 'dart:async';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:musicplayer/data/models.dart';
 import 'package:musicplayer/api/detail.dart';
-import 'bloc.dart';
-import 'detail.dart';
+import 'package:musicplayer/api/bloc.dart';
 
 
 
@@ -23,6 +22,9 @@ class _LibraryScreenState extends State<LibraryScreen>{
     // TODO: implement initState
     super.initState();
     _scrollController.addListener(_onScroll);
+    _searchController.addListener(() {
+      setState(() {});
+    });
 
     context.read<TrackBloc>().add(FetchTracks());
   }
@@ -49,12 +51,7 @@ class _LibraryScreenState extends State<LibraryScreen>{
   }
 
   void _onScreenChanged(String query){
-    if(_debounce?.isActive ?? false){
-      _debounce!.cancel();
-    }
-    _debounce = Timer(const Duration(milliseconds: 500), (){
-      context.read<TrackBloc>().add(SearchTracks(query));
-    });
+    context.read<TrackBloc>().add(SearchTracks(query));
   }
 
   @override

@@ -16,7 +16,7 @@ class MusicRepository{
     }
     final url = Uri.parse('https://itunes.apple.com/search?term=$searchTerm&limit=50&offset=$offset&media=music');
     try{
-      final response = await http.get(url);
+      final response = await http.get(url); 
       if (response.statusCode == 200){
         final data = json.decode(response.body);
         return data['results'].map((t)=> Track.fromJson(t)).toList();
