@@ -8,7 +8,7 @@ A high-performance Flutter application designed to render and interact with a da
 <img width="572" height="976" alt="image" src="https://github.com/user-attachments/assets/d092a5a4-bbc6-4510-85ba-6485f7735097" />
 
 ## 📺Demo Video:
-**[]**
+**[https://drive.google.com/file/d/18yu1K85W8-KXtOo6ZVgkA4iu5roEzpUr/view?usp=drive_link]**
 *contains everything regarding smooth scrolling and pagination*
 ---
 ## 🔑Key Features:
@@ -100,3 +100,7 @@ Currently, the app stores the fetched list in a Dart `List<Track>` in memory.
 
 **Solution:**
 *A self customized API that will be connected to a DataBase which will help in solving Grouping issues as well as loading of 100k songs will be possible as well.* 
+
+## Memory usage:
+### Memory Evidence
+**[https://drive.google.com/file/d/1sCf1hrE1Fqe-bgYgO_GJxMHImHG3wkb5/view?usp=drive_link]**
