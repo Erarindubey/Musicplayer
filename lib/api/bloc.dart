@@ -113,6 +113,7 @@ class TrackBloc extends Bloc<TrackEvent, TrackState>{
         }catch(e){
           emit(state.copyWith(status: TrackStatus.failure, errorMessage: e.toString()));
         }
-    });
+    }, transformer: (events, mapper) => events.debounceTime(Duration(milliseconds: 500)).asyncExpand(mapper)
+    );
   }
 }//bloc

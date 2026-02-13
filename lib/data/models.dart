@@ -20,7 +20,7 @@ class Track {
       id: json['trackId'],
       title: json['trackName'] ?? 'Unknown Track',
       artistName: json['artistName'] ?? 'Unknown Artist',
-      artworkUrl: json['artworkUrl100'] ?? '',
+      artworkUrl: (json['artworkUrl100']as String?)?.replaceAll('100x100', '600x600') ?? '',
       albumTitle: json['collectionName'] ?? 'Unknown Album',
       previewUrl: json['previewUrl'],
     );
