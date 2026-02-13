@@ -76,6 +76,7 @@ class _LibraryScreenState extends State<LibraryScreen>{
                 labelText: "Search Tracks",
                 hintText: 'e.g. eminem, arijit singh, Ed Sheeran....',
                 prefixIcon: const Icon(Icons.search),
+                isDense: true,
                 border: OutlineInputBorder(
                   borderRadius: BorderRadius.all(Radius.circular(12)),
                 ),
