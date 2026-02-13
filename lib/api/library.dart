@@ -63,6 +63,7 @@ class _LibraryScreenState extends State<LibraryScreen>{
         backgroundColor: Colors.deepPurple,
         shadowColor: Colors.black,
         scrolledUnderElevation: 5,
+
       ),
       backgroundColor: Colors.purple[50],
       body: Column(
@@ -74,7 +75,7 @@ class _LibraryScreenState extends State<LibraryScreen>{
               decoration: InputDecoration(
                 labelText: "Search Tracks",
                 hintText: 'e.g. eminem, arijit singh, Ed Sheeran....',
-                prefix: const Icon(Icons.search),
+                prefixIcon: const Icon(Icons.search),
                 border: OutlineInputBorder(
                   borderRadius: BorderRadius.all(Radius.circular(12)),
                 ),

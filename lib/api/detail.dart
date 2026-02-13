@@ -28,8 +28,11 @@ class _DetailTrackState extends State<DetailTrack>{
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        title: Text(widget.track.title),
+        title: Text(widget.track.title, style: const TextStyle(color: Colors.white, fontWeight: FontWeight.bold),),
         elevation: 0,
+        shadowColor: Colors.black,
+        scrolledUnderElevation: 5,
+        backgroundColor: Colors.deepPurple,
       ),
       body: SingleChildScrollView(
         padding: const EdgeInsets.all(20.0),
