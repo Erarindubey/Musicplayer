@@ -46,7 +46,9 @@ The app follows a strict **BLoC (Business Logic Component)** architecture to sep
 
 ### **1 API Migration:**
 **Constraint:**: The document had suggested to use the `Deezer Api`.
+
 **Conflict:**: The `deezer api` is geo-blocked in `India` that makes it mostly impossible to retreieve data from api without a `Vpn`.
+
 **Resolution:**: The `Itunes Api` is free and functions similary like `Deezer`, because it has similar functionality and same data output so the response given by `Itunes api` was accurate and reliable and was the reason that i used it instead of `Deezer`.
 
 
@@ -58,7 +60,9 @@ The app follows a strict **BLoC (Business Logic Component)** architecture to sep
 
 ### **2 Omission of client-side A-Z Grouping**
 **Constraint**: The document had requested that the `Flutter` application should have `A-Z Grouping` with sticky headers.
+
 **Conflict**: The `Itunes Api` returns results sorted by **Relevance** (popularity) not Alphabetically. To Group them and sort in A-Z format, all 50k songs must be loaded at once into memory.
+
 **Resolution:** Loading 50k objects into RAM at startup violates the "Stable Memory Usage" and "Quick Startup" requirements. I prioritized **performance** and **infinite scrolling** over sorting. I simulated directory-style diversity by fetching tracks from an alphabetical list of famous artists (A-Z) in the repository.
 
 
@@ -68,7 +72,9 @@ The app follows a strict **BLoC (Business Logic Component)** architecture to sep
 
 ### **3. Image Resolution "Hack"**
 **Constraint:** The API returns low-quality 100x100 thumbnails (`artworkUrl100`).
+
 **Conflict:** The Details screen requires a high-quality hero image (300x300+).
+
 **Resolution:** I implemented a string manipulation utility in the `Track` model to replace `100x100` with `600x600` in the URL. This accesses the high-res assets stored on Apple's servers without needing a different API endpoint.
 
 ---
